@@ -15,8 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $result->fetch_assoc();
 
     if ($user && password_verify($password, $user['password'])) {
+        // Simpan data ke sesi
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role_id'] = $user['role_id'];
+        $_SESSION['username'] = $user['username']; // Menyimpan username ke sesi
+
+        // Redirect berdasarkan peran pengguna
         if ($user['role_id'] == 1) {
             header("Location: admin_dashboard.php");
         } elseif ($user['role_id'] == 2) {
