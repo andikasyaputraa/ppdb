@@ -9,10 +9,49 @@
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(120deg, #49e5a9 0%, #3eab81 100%);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background: #3eab81;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Agar navbar selalu di atas */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar .nav-menu {
+    margin-top: 10px;
+}
+
+.navbar .nav-menu li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar .nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-menu li a:hover {
+    color: #dff1df;
 }
 
 /* Container Styling */
@@ -24,6 +63,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
+    margin-top: 100px; /* Ruang untuk navbar */
 }
 
 @keyframes fadeIn {

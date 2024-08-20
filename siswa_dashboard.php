@@ -15,25 +15,29 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siswa Dashboard - SMK HIJAU MUDA</title>
-    <link rel="stylesheet" href="css/admin_dashboard.css">
+    <link rel="stylesheet" href="css/siswa_dashboard.css">
 </head>
 <body>
 <nav class="navbar">
             <div class="logo">
-                    <h1>SMK HIJAU MUDA</h1>
+                    <h1 >SMK HIJAU MUDA</h1>
                 </div>    
             </div>
             <ul class="nav-menu">
-                <li><a href="guru_dashboard.php">Beranda</a></li>
-                <li><a href="#">Mata Pelajaran anda</a></li>
-                <li><a href="">Nilai</a></li>
-                <li><a href="data_guru.php">Ujian</a></li>
+                <li><a href="siswa_dashboard.php">Beranda</a></li>
+                <li><a href="siswa_dashboard.php">kelas</a></li>
+                <li><a href="siswa_dashboard.php">ujian</a></li>
+                <li><a href="profile_siswa.php">Profile</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
     <div class="container">
         <h2>Welcome, <?php echo htmlspecialchars($username); ?>!</h2>
+    
+
+    
+    
     </div>
 </body>
 </html>

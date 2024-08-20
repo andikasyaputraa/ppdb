@@ -22,13 +22,12 @@ $username = $_SESSION['username'];
         <nav class="navbar">
             <div class="logo">
                     <h1>SMK HIJAU MUDA</h1>
-                </div>    
-            </div>
+            </div>    
             <ul class="nav-menu">
                 <li><a href="guru_dashboard.php">Beranda</a></li>
                 <li><a href="#">Mata Pelajaran anda</a></li>
                 <li><a href="">Nilai</a></li>
-                <li><a href="data_guru.php">Ujian</a></li>
+                <li><a href="profile_guru.php">Profile</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -36,5 +35,8 @@ $username = $_SESSION['username'];
     <div class="container">
         <h2>Welcome, <?php echo htmlspecialchars($username); ?>!</h2>
     </div>
+    <div class="footer">
+            &copy; 2024 SMK HIJAU MUDA. by Muhammad Andika Anjas Syaputra
+        </div>
 </body>
 </html>

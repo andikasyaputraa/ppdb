@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container">
-        <h2>Daftar Akun Sobb!!</h2>
+        <h2>Daftar Akun</h2>
         <?php if (isset($error)): ?>
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
@@ -37,14 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="username" placeholder="Nama User" required>
             <input type="password" name="password" placeholder="Kata Sandi" required>
             <select name="role" required>
-                <option value="1">Admin</option>
+                <!-- <option value="1">Admin</option> -->
                 <option value="2">Guru</option>
                 <option value="3">Siswa</option>
             </select>
             <button type="submit">Daftar</button>
         </form>
         <div class="message">
-            sudah daftar? klik <a href="login.php">Masuk Guys</a>
+            sudah daftar? klik <a href="login.php">Masuk</a>
         </div>
     </div>
 </body>

@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 1) {
             <p>Program studi yang mempelajari tentang administrasi perkantoran, pengelolaan arsip, dan manajemen kantor secara umum.</p>
         </div>     
         <div class="footer">
-            &copy; 2024 SMK HIJAU MUDA. All rights reserved.
+            &copy; 2024 SMK HIJAU MUDA. by Muhammad Andika Anjas Syaputra
         </div>
     </div>
 
