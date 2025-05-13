@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #49e5a9 0%, #3eab81 100%);
+    background: #f9f9f9; /* Warna abu-abu */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@ h2 {
 }
 
 /* Form Input Styling */
-input[type="text"], input[type="password"], select {
+input[type="text"], input[type="email"], input[type="password"], select {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
@@ -58,7 +58,7 @@ input[type="text"], input[type="password"], select {
     transition: all 0.3s ease;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, select:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
     border: 1px solid #66a6ff;
     box-shadow: 0 0 8px rgba(102, 166, 255, 0.2);
 }
@@ -102,4 +102,35 @@ button:hover {
     color: red;
     text-align: center;
     margin-bottom: 10px;
+}
+
+/* Media Query untuk tampilan mobile */
+@media (max-width: 768px) {
+    /* Menyesuaikan ukuran container untuk perangkat mobile */
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Menyesuaikan ukuran font input dan tombol */
+    input[type="text"], input[type="email"], input[type="password"], select {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Menyesuaikan tombol agar lebih mudah digunakan */
+    button {
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    /* Memperbesar teks pada link login */
+    .message a {
+        font-size: 16px;
+    }
+
+    /* Menyesuaikan margin judul */
+    h2 {
+        font-size: 22px;
+    }
 }

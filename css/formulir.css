@@ -1,0 +1,80 @@
+/* CSS untuk Mobile Responsive */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center; /* Menyamakan tinggi checkbox dan teks */
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Styling untuk checkbox */
+input[type="checkbox"] {
+    margin-right: 8px; /* Memberi jarak antara checkbox dan teks */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background-color:#3e9565;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    input, select, textarea {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,137 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+    padding: 20px; /* Menambahkan padding untuk menghindari pemotongan di mobile */
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    animation: slideUp 1s ease;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #333;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #555;
+    width: 100%; /* Set width to 100% for uniformity */
+}
+
+input, select {
+    width: 96%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #2b7b3c;
+    box-shadow: 0 0 8px rgba(85, 200, 112, 0.3);
+    outline: none;
+}
+
+button {
+    width: 100%; /* Mengubah lebar agar sesuai dengan layar kecil */
+    padding: 14px;
+    background-color: #2b7b3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #539261;
+    transform: translateY(-3px);
+}
+
+.rekening {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    background-color: #e9f5ec;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #2b7b3c;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+/* Tambahan CSS untuk mengatur lebar label */
+label {
+    width: 100%; /* Mengatur lebar label agar sama panjang */
+    display: inline-block; /* Membuat label tampil dalam satu baris */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        font-size: 16px;
+        margin-top: 10%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        width: 100%; /* Agar tombol dan input tidak terlalu kecil di mobile */
+    }
+}

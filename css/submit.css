@@ -1,0 +1,8 @@
+body{
+    background-color: rgb(245, 245, 245);
+}
+
+button:hover {
+    background-color: #539261;
+    transform: translateY(-3px);
+}

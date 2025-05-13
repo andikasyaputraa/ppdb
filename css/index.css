@@ -1,0 +1,488 @@
+/* Reset dan box-sizing global */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dan pengaturan umum */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Style tombol */
+/*.btn {*/
+/*    display: inline-block;*/
+/*    background-color: rgb(105, 188, 144);*/
+/*    color: white;*/
+/*    padding: 20px 25px;*/
+/*    text-decoration: none;*/
+/*    border-radius: 5px;*/
+/*    margin-top: 10px;*/
+/*    transition: background-color 0.3s ease-in-out;*/
+/*}*/
+/*.btn:hover {*/
+/*    background-color:rgb(115, 163, 189);*/
+/*}*/
+
+/* Style tombol */
+.center-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan tombol */
+    gap: 15px; /* Beri jarak antar tombol */
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ukuran tombol seragam */
+    padding: 15px;
+    background-color: #3e9565;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #2e7d57;
+}
+
+
+/* Pusatkan tombol */
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color:#2e7d57;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+/*header nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-size: 18px;*/
+/*    text-transform: uppercase;*/
+/*    transition: color 0.3s;*/
+/*}*/
+
+header nav ul li a:hover {
+    color: #ff7f50;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 5px 5px;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Section Umum */
+section {
+    padding: 10px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #3e9565;
+    font-weight: bold;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Eskul dan Jurusan */
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+
+/* Peta */
+#map {
+    height: 450px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/* Footer styles */
+footer {
+    padding: 10px 0;
+    /* background-color: #4CAF50; Warna background footer */
+    color: rgb(163, 160, 160);
+    text-align: center;
+    position: relative; /* Memastikan footer berada di bawah */
+    bottom: 0;
+    left: 0;
+    font-size:12px;
+}
+
+/* Media Queries untuk Responsivitas */
+@media screen and (max-width: 1024px) {
+    /* Responsif untuk tablet dan bawah */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin:4px;
+    }
+
+    /* Slideshow */
+    .mySlides img {
+        height: 280px;
+    }
+
+    /* Tabel */
+    table th, table td {
+        font-size: 14px;
+    }
+
+    /* Peta */
+    #map {
+        height: 350px;
+    }
+
+}
+
+/* Styling untuk bagian sekolah */
+.sekolah {
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling untuk bagian info */
+.info {
+    text-align: center;
+}
+
+.info h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.info h2 {
+    font-size: 20px;
+    color: #2980b9;
+    margin-top: 20px;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info ul li {
+    font-size: 16px;
+    color: #444;
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px){
+    .sekolah{
+        padding: 20px;
+    }
+
+    .info h1 {
+        font-size: 20px;
+    }
+
+    .info h2 {
+        font-size: 18px;
+    }
+
+    .info p,
+    .info ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sekolah {
+        padding: 15px;
+    }
+
+    .info h1 {
+        font-size: 18px;
+    }
+
+    .info h2 {
+        font-size: 16px;
+    }
+
+    .info p,
+    .info ul li {
+        font-size: 13px;
+    }
+}
+
+
+/* Styling untuk bagian info-section */
+.info-section {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Styling untuk info-box yang berisi data */
+.info-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    max-width: 1000px; /* Atur lebar maksimum */
+    margin: 0 auto; /* Pusatkan horizontal */
+}
+
+/* Styling untuk setiap item di dalam info-box */
+.info-box div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Styling untuk jam */
+.clock p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling responsif */
+@media (max-width: 768px) {
+    .info-section {
+        padding: 15px;
+    }
+
+    .info-box {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .info-box div {
+        padding: 10px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+}
+
+/* Styling tambahan untuk tampilan ketika di perangkat mobile */
+@media (max-width: 480px) {
+    .clock p {
+        font-size: 16px;
+    }
+
+    .info-box p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Responsif untuk perangkat mobile besar */
+    header .logo h1 {
+        font-size: 22px;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    /* Slideshow */
+    .mySlides img {
+        height: 220px;
+    }
+
+    /* Tabel */
+    table th, table td {
+        font-size: 13px;
+    }
+
+    /* Peta */
+    #map {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Responsif untuk perangkat mobile */
+    header .logo h1 {
+        font-size: 18px;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    /* Slideshow */
+    .mySlides img {
+        height: 180px;
+    }
+
+    /* Tabel */
+    table th, table td {
+        font-size: 12px;
+    }
+
+    /* Peta */
+    #map {
+        height: 250px;
+    }
+}

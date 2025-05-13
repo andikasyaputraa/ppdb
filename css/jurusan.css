@@ -1,0 +1,98 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling untuk container */
+.countainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-right:40px;
+}
+
+/* Styling untuk box1 (teks) */
+.box1 {
+    width: 55%;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk teks */
+.box1 h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.box1 p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Styling untuk box2 (gambar) */
+.box2 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Styling untuk gambar */
+.box2 img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+/* Responsiveness untuk layar kecil */
+@media (max-width: 768px) {
+    .countainer1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .box1 {
+        width: 90%;
+    }
+
+    .box1 h1 {
+        font-size: 22px;
+    }
+
+    .box1 p {
+        font-size: 16px;
+    }
+
+    .box2 {
+        width: 90%;
+    }
+
+    .box2 img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Responsiveness untuk layar sangat kecil (HP kecil) */
+@media (max-width: 480px) {
+    .box1 h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .box1 p {
+        font-size: 14px;
+    }
+
+    .box2 img {
+        width: 100%;
+    }
+}
