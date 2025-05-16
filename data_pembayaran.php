@@ -1,7 +1,7 @@
 <?php
 // Koneksi ke database
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$conn = new mysqli('localhost', 'ppdb7395_smkhm', 'SdfaCOLq6[Tl', 'ppdb7395_smk_hijau_muda');
+$conn = new mysqli('localhost', 'root', '', 'smkhijaumuda');
 
 // Memeriksa koneksi ke database
 if ($conn->connect_error) {

@@ -25,6 +25,19 @@ $row = mysqli_fetch_assoc($result);
 $total_pendaftar = $row['total_pendaftar'];
 $sisa_kuota = $max_kuota - $total_pendaftar;
 
+// Ambil semua datainfo ppdb
+$data_ppdb = mysqli_query($conn, "SELECT * FROM informasi_ppdb");
+
+if (isset($_GET['hapus_informasi']) && $_GET['hapus_informasi'] == 'true') {
+    $hapus = mysqli_query($conn, "DELETE FROM informasi_ppdb");
+
+    if ($hapus) {
+        echo "<script>alert('Semua data informasi PPDB berhasil dihapus.'); window.location.href='admin_dashboard.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus data.');</script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +49,33 @@ $sisa_kuota = $max_kuota - $total_pendaftar;
     <link rel="stylesheet" href="css/siswa_dashboard.css">
 
 </head>
+<style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+</style>
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -60,35 +100,28 @@ $sisa_kuota = $max_kuota - $total_pendaftar;
     </div>
     <div class="container">
      <!-- Informasi PPDB -->
-<section id="informasi-ppdb" style="margin: 50px 20px;">
-    <h1 style="text-align: center; font-family: Arial, sans-serif;">Informasi PPDB</h1>
-    <table>
-        <thead>
+<!-- Daftar Informasi PPDB, hanya tampil jika tidak ada parameter set_kuota atau informasi_ppdb -->
+    <?php if (!isset($_GET['set_gelombang']) && !isset($_GET['set_kuota']) && !isset($_GET['edit']) && !isset($_GET['informasi_ppdb'])): ?>
+        <h3>Daftar Biaya PPDB</h3>
+        <table border="1" cellpadding="8" cellspacing="0">
             <tr>
-                <th>Gel</th>
-                <th>Tanggal Pendaftaran</th>
-                <th>Kuota</th>
+                <th>NO</th>
+                <th>Jenis</th>
+                <th>Nominal</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>1 Januari 2025 - 31 Januari 2025</td>
-                <td>200 Siswa</td>
-            </tr>
-            <tr style="background-color: #f2f2f2;">
-                <td>2</td>
-                <td>1 Februari 2025 - 28 Februari 2025</td>
-                <td>200 Siswa</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>1 Maret 2025 - 31 Maret 2025</td>
-                <td>100 Siswa</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+            <?php
+            $no = 1;
+            while ($row = mysqli_fetch_assoc($data_ppdb)) {
+                echo "<tr>
+                        <td>$no</td>
+                        <td>{$row['jenis']}</td>
+                        <td>Rp " . number_format($row['nominal'], 0, ',', '.') . "</td>
+                    </tr>";
+                $no++;
+            }
+            ?>
+        </table>
+        <?php endif; ?>
     <div class="info-section">
     
         <div class="info-box">

@@ -9,7 +9,7 @@ $admin_name = isset($_SESSION['username']) ? $_SESSION['username'] : 'Admin';
 
 // Koneksi ke database
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$conn = new mysqli('localhost', 'ppdb7395_smkhm', 'SdfaCOLq6[Tl', 'ppdb7395_smk_hijau_muda');
+$conn = new mysqli('localhost', 'root', '', 'smkhijaumuda');
 
 // Ambil kuota terbaru
 $result = mysqli_query($conn, "SELECT * FROM kuota_ppdb LIMIT 1");
@@ -130,9 +130,174 @@ if (isset($_GET['hapus_informasi'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - SMK HIJAU MUDA</title>
-    <link rel="stylesheet" href="css/admin_dashboard.css">
+    <link rel="stylesheet" href="">
     <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #e6e6e6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #3e9565;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(43, 123, 60, 0.8);
+    color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 4s ease-in-out forwards;
+    z-index: 1000;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 30px;
+    color: #fff;
+    margin:30px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 30px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    background-color: #ffffff;
+    color: #379f71;
+}
+
+h2 {
+    color: #2b7b3c;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+/* Container Styling */
+.container {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto 20px;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title Styling */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.container2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.box{
+    background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+}
+.box:hover {
+    transform: translateY(-10px);
+}
+.box h3 {
+    margin-top: 0;
+    color: #333;
+}
+.box p {
+    color: #666;
+}
+.box a{
+    text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+    padding: 10px 0;
+    /* background-color: #4CAF50; Warna background footer */
+    color: rgb(163, 160, 160);
+    text-align: center;
+    position: relative; /* Memastikan footer berada di bawah */
+    bottom: 0;
+    left: 0;
+}
+
         .kuota-box, .edit-form, .set-kuota-form {
             background: #f9f9f9;
             border-radius: 10px;
@@ -649,6 +814,83 @@ if (isset($_GET['hapus_informasi'])) {
     }
 }
 
+/* Hamburger Menu - Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Hamburger Menu - Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide the desktop menu */
+    .nav-menu {
+        display: none;
+    }
+
+    /* Show hamburger in mobile view */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show the menu when hamburger is active */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #3e9565;
+        position: absolute;
+        margin-top:45px;
+        top: 60px;
+        left: 0;
+        width: 50%;
+        text-align: right;
+        padding: 10px 0;
+        margin-left:50%;
+        height:100vh;
+    }
+
+    .nav-menu li {
+        padding: 10px 0;
+    }
+    
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
 
     </style>
 </head>
@@ -659,11 +901,15 @@ if (isset($_GET['hapus_informasi'])) {
             <h1>SMK HIJAU MUDA</h1>
         </div>
         <ul class="nav-menu">
-            <li><a href="admin_dashboard.php">Beranda</a></li>
-            <li><a href="data_pendaftar_admin.php">Data Calon Siswa</a></li>
-            <li><a href="data_pembayaran.php">Data Pembayaran</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
+                <li><a href="admin_dashboard.php">Beranda</a></li>
+                <li><a href="data_pendaftar_admin.php">Data Calon Siswa</a></li>
+                <li><a href="data_pembayaran.php">Data Pembayaran</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+         <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
     </nav>
 </header>
 
@@ -819,7 +1065,7 @@ if (isset($_GET['hapus_informasi'])) {
         </a>
     <table border="1" cellpadding="8" cellspacing="0">
         <tr>
-            <th>No</th>
+            <!--<th>No</th>-->
             <th>Gelombang</th>
             <th>Tanggal</th>
             <th>Kuota</th>
@@ -829,7 +1075,7 @@ if (isset($_GET['hapus_informasi'])) {
         $no = 1;
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>
-                    <td>{$no}</td>
+                 
                     <td>{$row['gelombang']}</td>
                     <td>{$row['tanggal']}</td>
                     <td>{$row['kuota']}</td>
@@ -862,6 +1108,16 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+ // hamburger
+      document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+});
 </script>
 </body>
 </html>
